@@ -1,0 +1,22 @@
+from gpio import *
+from time import *
+def main():
+	
+	pinMode(9, IN)
+	pinMode(1, OUT)
+	pinMode(2, OUT)
+
+	while True:
+		motion_sensor = digitalRead(9)
+		if motion_sensor == HIGH:
+			print("Someone's awake.");
+			print("Making Coffee...");
+			customWrite(1,1)
+			customWrite(2,1)
+			delay(6000)
+			print("Done. Coffee is ready.");
+			customWrite(1,0)
+			customWrite(2,0)
+		delay(500)
+if __name__ == "__main__":
+	main()
