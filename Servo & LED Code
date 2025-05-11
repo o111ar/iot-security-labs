@@ -1,0 +1,18 @@
+from gpio import *
+from time import *
+
+def main():
+	pinMode(0, OUT)	
+	pinMode(1, OUT)
+	print("Blinking")
+	while True:
+		digitalWrite(1, HIGH);
+		customWrite(0, 127);
+		delay(1000)
+		digitalWrite(1, LOW);
+		customWrite(0, -127);
+		delay(500)
+
+if __name__ == "__main__":
+	main()
+ 
